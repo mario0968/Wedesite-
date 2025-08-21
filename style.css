@@ -1,0 +1,277 @@
+.shibacoin-om {
+margin-right: 12px
+}
+.shibacoin-og {
+margin-bottom: 12px
+}
+.shibacoin-oy {
+margin-left: 12px
+}
+.shibacoin-ob {
+margin: 16px
+}
+.shibacoin-ow {
+margin-top: 16px
+}
+.shibacoin-ox {
+margin-right: 16px
+}
+.shibacoin-ok {
+margin-bottom: 16px
+}
+.shibacoin-o_ {
+margin-left: 16px
+}
+.shibacoin-oj {
+margin: 24px
+}
+.shibacoin-oq {
+margin-top: 24px
+}
+.shibacoin-oz {
+margin-right: 24px
+}
+.shibacoin-ue {
+margin-bottom: 24px
+}
+.shibacoin-ut {
+margin-left: 24px
+}
+.shibacoin-un {
+margin: 32px
+}
+.shibacoin-ur {
+margin-top: 32px
+}
+.shibacoin-ui {
+margin-right: 32px
+}
+.shibacoin-us {
+margin-bottom: 32px
+}
+.shibacoin-uo {
+margin-left: 32px
+}
+.shibacoin-uu {
+padding: 0
+}
+.shibacoin-ua {
+padding-top: 0
+}
+.shibacoin-uf {
+padding-right: 0
+}
+.shibacoin-ul {
+padding-bottom: 0
+}
+.shibacoin-uc {
+padding-left: 0
+}
+.shibacoin-uh {
+padding: 4px
+}
+.shibacoin-up {
+padding-top: 4px
+}
+.shibacoin-ud {
+padding-right: 4px
+}
+.shibacoin-uv {
+padding-bottom: 4px
+}
+.shibacoin-um {
+padding-left: 4px
+}
+.shibacoin-ug {
+padding: 8px
+}
+.shibacoin-uy {
+padding-top: 8px
+}
+.shibacoin-ub {
+padding-right: 8px
+}
+.shibacoin-uw {
+padding-bottom: 8px
+}
+.shibacoin-ux {
+padding-left: 8px
+}
+.shibacoin-uk {
+padding: 12px
+}
+.shibacoin-u_ {
+padding-top: 12px
+}
+.shibacoin-uj {
+padding-right: 12px
+}
+.shibacoin-uq {
+padding-bottom: 12px
+}
+.shibacoin-uz {
+padding-left: 12px
+}
+.shibacoin-ae {
+padding: 16px
+}
+.shibacoin-at {
+padding-top: 16px
+}
+.shibacoin-an {
+padding-right: 16px
+}
+.shibacoin-ar {
+padding-bottom: 16px
+}
+.shibacoin-ai {
+padding-left: 16px
+}
+.shibacoin-as {
+padding: 24px
+}
+.shibacoin-ao {
+padding-top: 24px
+}
+.shibacoin-au {
+padding-right: 24px
+}
+.shibacoin-aa {
+padding-bottom: 24px
+}
+.shibacoin-af {
+padding-left: 24px
+}
+.shibacoin-al {
+padding: 32px
+}
+.shibacoin-ac {
+padding-top: 32px
+}
+.shibacoin-ah {
+padding-right: 32px
+}
+.shibacoin-ap {
+padding-bottom: 32px
+}
+.shibacoin-ad {
+padding-left: 32px
+}
+.shibacoin-av {
+padding-top: 4px
+}
+.shibacoin-am {
+padding-top: 8px
+}
+.shibacoin-ag {
+padding-top: 12px
+}
+.shibacoin-ay {
+padding-top: 16px
+}
+.shibacoin-ab {
+padding-top: 24px
+}
+.shibacoin-aw {
+padding-top: 32px
+}
+.shibacoin-ax {
+padding-top: 48px
+}
+.shibacoin-ak {
+padding-top: 64px
+}
+@media (max-width: 640px) {
+.shibacoin-a_ {
+text-align: left
+}
+.shibacoin-aj {
+text-align: center
+}
+.shibacoin-aq {
+text-align: right
+}
+.shibacoin-az {
+text-align: center
+}
+.shibacoin-az img,
+.shibacoin-az svg,
+.shibacoin-az video {
+margin-left: auto;
+margin-right: auto
+}
+.shibacoin-az .vbuttonm {
+-webkit-box-pack: center;
+justify-content: center
+}
+.shibacoin-fe {
+padding-top: 4px
+}
+.shibacoin-ft {
+padding-top: 8px
+}
+.shibacoin-fn {
+padding-top: 12px
+}
+.shibacoin-fr {
+padding-top: 16px
+}
+.shibacoin-fi {
+padding-top: 24px
+}
+.shibacoin-fs {
+padding-top: 32px
+}
+.shibacoin-fo {
+padding-top: 48px
+}
+.shibacoin-fu {
+padding-top: 64px
+}
+}
+@media (min-width: 641px) {
+.shibacoin-fa {
+text-align: left
+}
+.shibacoin-ff {
+text-align: center
+}
+.shibacoin-fl {
+text-align: right
+}
+.shibacoin-fc {
+text-align: center
+}
+.shibacoin-fc img,
+.shibacoin-fc svg,
+shibacoin-fcvideo{
+margin-left: auto;
+margin-right: auto
+}
+.shibacoin-fc .vbuttonm{
+-webkit-box-pack: center;
+justify-content: center
+}
+}
+
+.input-amount::placeholder {
+color: #ffffff8c !important;
+}
+
+@media (min-width: 641px) {
+h2 {
+     font-size: 35px !important;
+}
+}
+
+.shibacoin-ib::after{
+display: contents;
+content: '';
+position: absolute;
+bottom: 0; 
+left: 0; 
+width: 100%;
+display: block;
+height: 0px !important;
+background: #191d1d;
+}
