@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShibaCoin Pre-Sale</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#fff0f5;
+color:#111; }
+header, section, footer { padding:15px; max-width:1200px; margin:auto;
+text-align:center; }
+.button { padding:10px 20px; background:#ff66cc; color:#fff; border:none;
+border-radius:8px; cursor:pointer; text-decoration:none; display:block; margin:5px
+auto; width:100%; box-sizing:border-box; }
+.button:hover { opacity:0.8; }
+section { background:#ffe6f0; margin:10px 0; border-radius:8px; padding:15px;
+box-shadow:0 4px 8px rgba(0,0,0,0.1); }
+input[type=number] { padding:10px; border-radius:5px; border:1px solid #ccc;
+width:100%; box-sizing:border-box; margin:5px 0; text-align:center; }
+#progress-container { background:#ddd; border-radius:5px; overflow:hidden;
+width:100%; height:28px; margin:10px 0; }
+#progress-bar { width:0%; height:100%; background:#ff66cc; text-align:center;
+color:#fff; line-height:28px; font-size:0.9em; }
+#layer2-animation { position:relative; height:80px; margin-top:15px;
+background:#fff0f5; border-radius:8px; overflow:hidden; }
+.social-links { display:flex; flex-wrap:wrap; gap:10px; justify-content:center;
+align-items:center; margin-top:10px; }
+.social-links img { width:40px; max-width:30%; flex:1; }
+#presale-info { background:#ffd6e8; border-radius:8px; padding:10px;
+margin-bottom:10px; text-align:center; font-weight:bold; font-size:0.9em; }
+@media (max-width:400px) { #layer2-animation { height:70px; } #progress-bar
+{ line-height:25px; font-size:0.8em; } }
+</style>
+</head>
+<body>
+<header>
+<a href="#pre-sale" class="button">Presale</a>
+</header>
+<section id="pre-sale">
+<div id="presale-info">
+Pre-Sale Price: 0.0009 USDT | Listing Price: 1.50 USDT | Raised: $600,000 USDT
+</div>
+<input type="number" placeholder="Amount">
+<button class="button">Buy</button>
+<div id="progress-container">
+<div id="progress-bar">0%</div>
+</div>
+</section>
+<section id="layer2-animation">
+<canvas id="block-chain-canvas" style="position:absolute; top:0; left:0;"></
+canvas>
+</section>
+<section class="social-links">
+<a href="https://t.me/shibacoin5" target="_blank"><img src="logo-telegram.png"
+alt="Telegram"></a>
+<a href="https://twitter.com/shibacoin120" target="_blank"><img
+src="logo-twitter.png" alt="Twitter"></a>
+</section>
+<footer>ShibaCoin Layer 2</footer>
+<script>
+window.addEventListener('load', () => {
+const bar = document.getElementById('progress-bar');
+const presaleInfo = document.getElementById('presale-info');
+// Define parts (each part $2,600,000) and price increments
+const parts = [
+{ maxUSDT: 2600000, startPrice: 0.0009, endPrice: 0.00102 },
+{ maxUSDT: 2600000, startPrice: 0.00102, endPrice: 0.00104 },
+{ maxUSDT: 2600000, startPrice: 0.00104, endPrice: 0.00106 },
+{ maxUSDT: 2600000, startPrice: 0.00106, endPrice: 0.00108 }
+// You can add more parts as needed
+];
+let partIndex = 0;
+let currentUSDT = 600000; // initial amount
+const stepUSDT = 10000;
+const intervalTime = 50;
+function updateBar() {
+const part = parts[partIndex];
+currentUSDT += stepUSDT;
+if(currentUSDT >= part.maxUSDT){
+currentUSDT = 0; // reset bar
+partIndex++;
+if(partIndex >= parts.length){
+partIndex = parts.length -1; // stay at last part
+}
+}
+const percentage = Math.floor((currentUSDT / part.maxUSDT) * 100);
+bar.style.width = percentage + '%';
+bar.textContent = percentage + '%';
+const price = part.startPrice + ((part.endPrice - part.startPrice) *
+(currentUSDT / part.maxUSDT));
+presaleInfo.textContent = `Pre-Sale Price: ${price.toFixed(5)} USDT | Listing
+Price: 1.50 USDT | Raised: $${currentUSDT.toLocaleString()} USDT`;
+}
+setInterval(updateBar, intervalTime);
+// Layer 2 animation
+const canvas = document.getElementById('block-chain-canvas');
+const ctx = canvas.getContext('2d');
+function resizeCanvas() {
+canvas.width = canvas.parentElement.clientWidth;
+canvas.height = canvas.parentElement.clientHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+const blocks = [];
+for(let i=0;i<6;i++){
+blocks.push({ x: Math.random()*canvas.width, y:
+Math.random()*(canvas.height-20), w:20, h:20, color:'#ff66cc' });
+}
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.strokeStyle = '#ff3399';
+ctx.lineWidth = 2;
+for(let i=0;i<blocks.length-1;i++){
+ctx.beginPath();
+ctx.moveTo(blocks[i].x+blocks[i].w/2, blocks[i].y+blocks[i].h/2);
+ctx.lineTo(blocks[i+1].x+blocks[i+1].w/2, blocks[i+1].y+blocks[i+1].h/2);
+ctx.stroke();
+}
+blocks.forEach(b=>{ ctx.fillStyle=b.color; ctx.fillRect(b.x,b.y,b.w,b.h); });
+}
+function animate(){
+blocks.forEach(b=>{ b.x += 2; if(b.x>canvas.width) b.x=-b.w; });
+draw();
+requestAnimationFrame(animate);
+}
+animate();
+});
+</script>
+</body>
+</html>
